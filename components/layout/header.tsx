@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 import { Menu, MessageCircle } from "lucide-react";
 import { Button } from "@/components/ui";
 import { navigation, siteConfig } from "@/data/site";
@@ -7,7 +8,7 @@ export function Header() {
   return (
     <header className="fixed inset-x-0 top-0 z-50 border-b border-white/[0.05] bg-[#050505]/82 shadow-[0_8px_28px_rgba(0,0,0,.28)] backdrop-blur-xl">
       <div className="mx-auto flex h-20 w-full max-w-[1180px] items-center justify-between gap-5 px-5 lg:h-24 lg:px-8">
-        <a href="#inicio" aria-label="EFORCE - início">
+        <Link href="/" aria-label="EFORCE - início">
           <Image
             alt="EFORCE Eletrônica Automotiva"
             className="h-auto w-32 brightness-[1.7] saturate-[1.55] contrast-[1.08] lg:w-44"
@@ -16,7 +17,7 @@ export function Header() {
             src="/images/logo-eforce.png"
             width={160}
           />
-        </a>
+        </Link>
 
         <nav aria-label="Navegação principal" className="hidden items-center gap-8 lg:flex">
           {navigation.map((item) => (

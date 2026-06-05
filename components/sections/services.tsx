@@ -4,9 +4,13 @@ import Image from "next/image";
 import { Cpu, KeyRound, ScanLine, Settings, ShieldCheck, Wrench } from "lucide-react";
 import { Button, Card } from "@/components/ui";
 import { services } from "@/data/home";
+import { siteConfig } from "@/data/site";
 import { SectionShell } from "./section-shell";
 
 const icons = [Settings, ScanLine, KeyRound, ShieldCheck, Cpu, Wrench];
+const servicesWhatsappHref = `${siteConfig.whatsappHref.split("?")[0]}?text=${encodeURIComponent(
+  "Olá! Gostaria de conhecer mais serviços da E.FORCE.",
+)}`;
 
 export function Services() {
   return (
@@ -55,7 +59,7 @@ export function Services() {
           );
         })}
       </div>
-      <div className="mt-7 text-center"><Button href="#contato" variant="secondary">Ver todos os serviços</Button></div>
+      <div className="mt-7 text-center"><Button href={servicesWhatsappHref} target="_blank" variant="secondary">CONSULTE MAIS SERVIÇOS</Button></div>
     </SectionShell>
   );
 }

@@ -148,7 +148,7 @@ export function Hero() {
             <Button href={siteConfig.whatsappHref} target="_blank">
               Quero um diagnóstico <MessageCircle size={15} />
             </Button>
-            <Button href="#servicos" variant="secondary">
+            <Button href="/#servicos" variant="secondary">
               Nossos serviços
             </Button>
           </motion.div>

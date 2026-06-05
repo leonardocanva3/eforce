@@ -30,7 +30,7 @@ export function About() {
               </li>
             ))}
           </ul>
-          <Button className="mt-6 self-start" href="#contato" variant="secondary">Conhecer nossa história</Button>
+          <Button className="mt-6 self-start" href="/historia" variant="secondary">Conhecer nossa história</Button>
         </div>
 
         <div className="grid grid-cols-2 gap-3">

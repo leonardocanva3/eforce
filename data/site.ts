@@ -15,10 +15,10 @@ export const siteConfig = {
 } as const;
 
 export const navigation = [
-  { label: "Início", href: "#inicio" },
-  { label: "Serviços", href: "#servicos" },
-  { label: "Sobre", href: "#sobre" },
-  { label: "Diferenciais", href: "#diferenciais" },
-  { label: "Avaliações", href: "#avaliacoes" },
-  { label: "Contato", href: "#contato" },
+  { label: "Início", href: "/#inicio" },
+  { label: "Serviços", href: "/#servicos" },
+  { label: "Sobre", href: "/#sobre" },
+  { label: "Diferenciais", href: "/#diferenciais" },
+  { label: "Avaliações", href: "/#avaliacoes" },
+  { label: "Contato", href: "/#contato" },
 ] as const;
