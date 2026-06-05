@@ -42,6 +42,10 @@ export const metadata: Metadata = {
   title: "EFORCE Eletrônica Automotiva | Diagnóstico Automotivo em Juína-MT",
   description:
     "Especialistas em eletrônica automotiva, injeção eletrônica, módulos, ABS, chaves codificadas e diagnóstico avançado em Juína-MT.",
+  icons: {
+    icon: "/favicon.ico",
+    shortcut: "/favicon.ico",
+  },
 };
 
 export default function RootLayout({
