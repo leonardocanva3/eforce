@@ -1,4 +1,4 @@
-import type { ButtonHTMLAttributes, ReactNode } from "react";
+import type { AnchorHTMLAttributes, ButtonHTMLAttributes, ReactNode } from "react";
 import Link from "next/link";
 
 type ButtonVariant = "primary" | "secondary" | "light";
@@ -6,8 +6,9 @@ type ButtonVariant = "primary" | "secondary" | "light";
 type ButtonProps = {
   children: ReactNode;
   className?: string;
+  download?: AnchorHTMLAttributes<HTMLAnchorElement>["download"];
   href?: string;
-  target?: string;
+  target?: AnchorHTMLAttributes<HTMLAnchorElement>["target"];
   variant?: ButtonVariant;
 } & ButtonHTMLAttributes<HTMLButtonElement>;
 
@@ -22,6 +23,7 @@ const variants: Record<ButtonVariant, string> = {
 export function Button({
   children,
   className = "",
+  download,
   href,
   target,
   variant = "primary",
@@ -39,14 +41,14 @@ export function Button({
   if (href) {
     if (href.startsWith("/")) {
       return (
-        <Link className={classes} href={href}>
+        <Link className={classes} download={download} href={href} target={target}>
           {children}
         </Link>
       );
     }
 
     return (
-      <a className={classes} href={href} rel={target ? "noreferrer" : undefined} target={target}>
+      <a className={classes} download={download} href={href} rel={target ? "noreferrer" : undefined} target={target}>
         {children}
       </a>
     );

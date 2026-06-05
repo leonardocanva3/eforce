@@ -3,7 +3,6 @@ import Image from "next/image";
 import Link from "next/link";
 import { ArrowLeft, CheckCircle2, MessageCircle } from "lucide-react";
 import { Button } from "@/components/ui";
-import { siteConfig } from "@/data/site";
 
 export const metadata: Metadata = {
   title: "Nossa História | EFORCE Eletrônica Automotiva",
@@ -62,8 +61,8 @@ export default function HistoriaPage() {
               ))}
             </ul>
 
-            <Button className="mt-9" href={siteConfig.whatsappHref} target="_blank">
-              Falar com a EFORCE <MessageCircle size={15} />
+            <Button className="mt-9" download href="/ebooks/ebook-eforce.pdf" target="_blank">
+              BAIXAR EBOOK PDF <MessageCircle size={15} />
             </Button>
           </div>
 

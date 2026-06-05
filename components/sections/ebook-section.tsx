@@ -32,8 +32,8 @@ export function EbookSection() {
               </div>
             </div>
 
-            <Button className="mt-8" href="/historia" variant="secondary">
-              Baixar eBook <ArrowUpRight size={14} />
+            <Button className="mt-8" href="/ebooks/ebook-eforce.pdf" variant="secondary">
+              BAIXAR E-BOOK GRATUITO <ArrowUpRight size={14} />
             </Button>
           </div>
 
