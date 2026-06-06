@@ -33,7 +33,7 @@ export function Problems() {
             Seu veículo apresenta algum desses sintomas?
           </p>
           <p className="text-base leading-relaxed font-medium sm:text-lg lg:text-xl">
-            Nossa equipe está pronta para realizar um diagnóstico preciso.
+            Nossa equipe em Juína - MT está pronta para realizar um diagnóstico preciso em ABS, airbag, módulos e sistemas eletrônicos.
           </p>
         </div>
         <Button className="mt-4" href={siteConfig.whatsappHref} target="_blank" variant="secondary">

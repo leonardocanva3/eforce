@@ -5,7 +5,7 @@ export const problems = [
   "ABS aceso",
   "Chave não reconhece",
   "Consumo excessivo",
-  "Painel com erros",
+  "Airbag aceso",
   "Módulo queimado",
 ] as const;
 
@@ -13,25 +13,25 @@ export const services = [
   {
     title: "Injeção eletrônica",
     description:
-      "Diagnóstico e reparação de sistemas de injeção eletrônica para melhor desempenho do motor.",
+      "Diagnóstico e reparação de sistemas de injeção eletrônica para melhor desempenho do motor em Juína-MT.",
     image: "/images/services/injecao-eletronica.jpg",
   },
   {
     title: "Diagnóstico avançado",
     description:
-      "Scanner profissional e equipamentos de última geração para identificar falhas com precisão.",
+      "Scanner automotivo profissional e equipamentos de última geração para identificar falhas com precisão.",
     image: "/images/services/diagnostico-avancado.jpg",
   },
   {
     title: "Chaves codificadas",
     description:
-      "Programação, codificação e recuperação de chaves automotivas com tecnologia de ponta.",
+      "Programação, codificação e recuperação de chaves codificadas automotivas com tecnologia de ponta.",
     image: "/images/services/chaves-codificadas.jpg",
   },
   {
-    title: "Sistemas ABS",
+    title: "Sistemas ABS e Airbag",
     description:
-      "Diagnóstico e reparo de sistemas de freios ABS, sensores e módulos.",
+      "Diagnóstico e reparo de sistemas ABS, airbag, sensores e módulos eletrônicos de segurança.",
     image: "/images/services/sistemas-abs.jpg",
   },
   {
@@ -43,7 +43,7 @@ export const services = [
   {
     title: "Scanner profissional",
     description:
-      "Leitura completa dos sistemas do veículo com equipamentos avançados.",
+      "Leitura completa dos sistemas do veículo com scanner automotivo profissional e equipamentos avançados.",
     image: "/images/services/scanner-profissional.jpg",
   },
 ] as const;

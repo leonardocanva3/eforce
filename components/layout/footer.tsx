@@ -1,5 +1,5 @@
 import Image from "next/image";
-import { ChevronRight, Mail, MapPin, Phone } from "lucide-react";
+import { ChevronRight, MapPin, Phone } from "lucide-react";
 import { navigation, siteConfig } from "@/data/site";
 
 function InstagramIcon() {
@@ -72,9 +72,6 @@ export function Footer() {
           <div className="mt-5 grid gap-3 text-xs text-muted">
             <a className="flex items-center gap-3 hover:text-white" href={`tel:${siteConfig.phone.replace(/\D/g, "")}`}>
               <Phone size={15} /> {siteConfig.phone}
-            </a>
-            <a className="flex items-center gap-3 hover:text-white" href={`mailto:${siteConfig.email}`}>
-              <Mail size={15} /> {siteConfig.email}
             </a>
             <span className="flex items-center gap-3"><MapPin size={15} /> {siteConfig.location}</span>
           </div>

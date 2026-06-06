@@ -3,11 +3,15 @@ import Image from "next/image";
 import Link from "next/link";
 import { ArrowLeft, CheckCircle2, MessageCircle } from "lucide-react";
 import { Button } from "@/components/ui";
+import { siteConfig } from "@/data/site";
 
 export const metadata: Metadata = {
   title: "Nossa História | EFORCE Eletrônica Automotiva",
   description:
     "Conheça a trajetória da EFORCE Eletrônica Automotiva em Juína-MT.",
+  alternates: {
+    canonical: `${siteConfig.siteUrl}/historia`,
+  },
 };
 
 const milestones = [

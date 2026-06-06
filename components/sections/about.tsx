@@ -21,7 +21,7 @@ export function About() {
             Mais de <span className="text-accent">10 anos</span><br />de excelência em<br /><span className="text-accent">eletrônica automotiva</span>
           </h2>
           <p className="mt-4 text-xs leading-5 text-muted">
-            A EFORCE é referência em diagnósticos e reparos de sistemas eletrônicos. Contamos com uma equipe especializada e equipamentos modernos.
+            A EFORCE é referência em Eletrônica Automotiva em Juína - MT, com diagnóstico e reparo de ABS, Airbag, chaves codificadas, programação de módulos e sistemas eletrônicos. Contamos com uma equipe especializada e equipamentos modernos.
           </p>
           <ul className="mt-5 grid gap-2">
             {benefits.map((benefit) => (

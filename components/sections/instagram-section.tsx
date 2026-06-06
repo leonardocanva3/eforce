@@ -9,7 +9,7 @@ const topics = [
   "Bastidores da oficina",
   "Programação de chaves",
   "Reparos eletrônicos",
-  "Sistemas ABS",
+  "Sistemas ABS e Airbag",
   "Dicas automotivas",
 ] as const;
 

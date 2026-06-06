@@ -25,7 +25,7 @@ export function Hero() {
 
   return (
     <section
-      className="relative isolate flex min-h-[100svh] overflow-hidden pt-20 lg:min-h-screen lg:pt-24"
+      className="relative isolate flex min-h-[720px] overflow-hidden pt-20 sm:min-h-[100svh] lg:min-h-screen lg:pt-24"
       id="inicio"
     >
       <motion.div
@@ -74,10 +74,10 @@ export function Hero() {
 
       <div className="pointer-events-none absolute inset-x-0 bottom-0 z-[11] h-40 bg-gradient-to-t from-[#050505] to-transparent" />
 
-      <div className="relative z-20 mx-auto flex w-full max-w-[1180px] items-center px-5 pb-16 lg:px-8 lg:pb-20">
+      <div className="relative z-20 mx-auto flex w-full max-w-[1180px] items-start px-5 pb-12 sm:items-center sm:pb-16 lg:px-8 lg:pb-20">
         <motion.div
           animate={{ opacity: 1, x: 0 }}
-          className="max-w-[640px] py-12 sm:py-16 lg:py-10"
+          className="max-w-[640px] pt-8 pb-12 sm:py-16 lg:py-10"
           initial={{
             opacity: shouldReduceMotion ? 1 : 0,
             x: shouldReduceMotion ? 0 : -40,
@@ -92,13 +92,14 @@ export function Hero() {
             Especialistas em eletrônica automotiva
           </p>
 
-          <h1 className="display-title mt-5 max-w-[620px] text-[clamp(4.2rem,7.4vw,7rem)] leading-[.86] text-white drop-shadow-[0_4px_24px_rgba(0,0,0,.7)]">
+          <h1 className="display-title mt-4 max-w-[620px] text-[3.6rem] leading-[.88] text-white drop-shadow-[0_4px_24px_rgba(0,0,0,.7)] sm:mt-5 sm:text-[clamp(4.2rem,7.4vw,7rem)] sm:leading-[.86]">
             Tecnologia que <span className="text-accent">move</span> seu carro
           </h1>
 
           <p className="mt-6 max-w-[500px] text-sm leading-6 text-white/78 sm:text-base">
-            Diagnóstico avançado, reparos precisos e soluções definitivas em
-            sistemas eletrônicos automotivos.
+            Eletrônica Automotiva em Juína - MT com diagnóstico avançado,
+            reparos precisos e soluções definitivas em sistemas eletrônicos
+            automotivos.
           </p>
 
           <div className="mt-8 grid max-w-[590px] grid-cols-2 gap-x-5 gap-y-5 sm:grid-cols-4">
@@ -134,7 +135,7 @@ export function Hero() {
 
           <motion.div
             animate={{ opacity: 1, y: 0 }}
-            className="mt-9 flex flex-col gap-3 sm:flex-row"
+            className="mt-7 flex flex-col gap-3 sm:mt-9 sm:flex-row"
             initial={{
               opacity: shouldReduceMotion ? 1 : 0,
               y: shouldReduceMotion ? 0 : 16,

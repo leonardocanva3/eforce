@@ -18,7 +18,7 @@ export function Services() {
       <div className="text-center">
         <h2 className="display-title text-4xl"><span>Nossas </span><span className="text-accent">especialidades</span></h2>
         <p className="mx-auto mt-3 max-w-5xl text-center text-base leading-relaxed font-medium text-white sm:text-xl lg:text-2xl lg:whitespace-nowrap">
-          Soluções completas em eletrônica automotiva com tecnologia e precisão.
+          Soluções completas em eletrônica automotiva em Juína - MT com tecnologia e precisão.
         </p>
       </div>
 

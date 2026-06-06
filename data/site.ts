@@ -4,8 +4,11 @@ export const siteConfig = {
   description:
     "Especialistas em eletrônica automotiva com diagnóstico preciso e soluções de alta performance.",
   phone: "(66) 98423-6905",
-  email: "eforceelecauto@gmail.com",
   location: "Juína - MT",
+  city: "Juína",
+  state: "MT",
+  country: "BR",
+  siteUrl: "https://eforceeletronica.com.br",
   whatsappHref:
     "https://wa.me/5566984236905?text=Olá!%20Visitei%20o%20site%20da%20EFORCE%20e%20gostaria%20de%20mais%20informações.",
   instagramHref: "https://instagram.com/eforceeletronica",

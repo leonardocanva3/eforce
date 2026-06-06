@@ -36,7 +36,7 @@ export function FinalCTA() {
             Fale agora com um especialista
           </h2>
           <p className="max-w-2xl text-base leading-relaxed font-medium text-white/90 sm:text-xl lg:text-2xl">
-            Diagnóstico rápido, solução precisa e garantia de qualidade.
+            Diagnóstico rápido em Juína - MT, solução precisa e garantia de qualidade.
           </p>
         </div>
 

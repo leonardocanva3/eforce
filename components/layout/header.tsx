@@ -31,18 +31,23 @@ export function Header() {
           ))}
         </nav>
 
-        <Button
-          className="hidden px-5 text-sm xl:inline-flex"
-          href={siteConfig.whatsappHref}
-          target="_blank"
-        >
-          <MessageCircle size={15} />
-          Fale pelo WhatsApp
-        </Button>
+        <div className="hidden xl:block">
+          <Button
+            className="px-5 text-sm"
+            href={siteConfig.whatsappHref}
+            target="_blank"
+          >
+            <MessageCircle size={15} />
+            Fale pelo WhatsApp
+          </Button>
+        </div>
 
         <details className="relative lg:hidden">
-          <summary className="grid size-11 cursor-pointer list-none place-items-center rounded border border-white/20 bg-black/30">
-            <Menu aria-label="Abrir menu" size={21} />
+          <summary
+            aria-label="Abrir menu de navegação"
+            className="grid size-11 cursor-pointer list-none place-items-center rounded border border-white/20 bg-black/30 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent"
+          >
+            <Menu aria-hidden="true" size={21} />
           </summary>
           <nav className="absolute right-0 mt-3 grid w-56 gap-1 rounded border border-white/10 bg-[#0a0e10]/95 p-2 shadow-2xl">
             {navigation.map((item) => (
