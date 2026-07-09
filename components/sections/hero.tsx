@@ -146,7 +146,11 @@ export function Hero() {
               ease: easeOut,
             }}
           >
-            <Button href={siteConfig.whatsappHref} target="_blank">
+            <Button
+              analyticsEvent="whatsapp_click"
+              href={siteConfig.whatsappHref}
+              target="_blank"
+            >
               Quero um diagnóstico <MessageCircle size={15} />
             </Button>
             <Button href="/#servicos" variant="secondary">

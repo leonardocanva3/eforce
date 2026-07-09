@@ -1,5 +1,6 @@
 import Image from "next/image";
 import { ChevronRight, MapPin, Phone } from "lucide-react";
+import { TrackedLink } from "@/components/ui";
 import { navigation, siteConfig } from "@/data/site";
 
 function InstagramIcon() {
@@ -70,9 +71,13 @@ export function Footer() {
         <div>
           <h3 className="text-xs font-bold uppercase tracking-wide">Contato</h3>
           <div className="mt-5 grid gap-3 text-xs text-muted">
-            <a className="flex items-center gap-3 hover:text-white" href={`tel:${siteConfig.phone.replace(/\D/g, "")}`}>
+            <TrackedLink
+              analyticsEvent="phone_click"
+              className="flex items-center gap-3 hover:text-white"
+              href={`tel:${siteConfig.phone.replace(/\D/g, "")}`}
+            >
               <Phone size={15} /> {siteConfig.phone}
-            </a>
+            </TrackedLink>
             <span className="flex items-center gap-3"><MapPin size={15} /> {siteConfig.location}</span>
           </div>
         </div>

@@ -59,7 +59,16 @@ export function Services() {
           );
         })}
       </div>
-      <div className="mt-7 text-center"><Button href={servicesWhatsappHref} target="_blank" variant="secondary">CONSULTE MAIS SERVIÇOS</Button></div>
+      <div className="mt-7 text-center">
+        <Button
+          analyticsEvent="whatsapp_click"
+          href={servicesWhatsappHref}
+          target="_blank"
+          variant="secondary"
+        >
+          CONSULTE MAIS SERVIÇOS
+        </Button>
+      </div>
     </SectionShell>
   );
 }

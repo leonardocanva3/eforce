@@ -65,7 +65,13 @@ export default function HistoriaPage() {
               ))}
             </ul>
 
-            <Button className="mt-9" download href="/ebooks/ebook-eforce.pdf" target="_blank">
+            <Button
+              analyticsEvent="ebook_download"
+              className="mt-9"
+              download
+              href="/ebooks/ebook-eforce.pdf"
+              target="_blank"
+            >
               BAIXAR EBOOK PDF <MessageCircle size={15} />
             </Button>
           </div>

@@ -33,6 +33,7 @@ export function Header() {
 
         <div className="hidden xl:block">
           <Button
+            analyticsEvent="whatsapp_click"
             className="px-5 text-sm"
             href={siteConfig.whatsappHref}
             target="_blank"

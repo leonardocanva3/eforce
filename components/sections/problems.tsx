@@ -36,7 +36,13 @@ export function Problems() {
             Nossa equipe em Juína - MT está pronta para realizar um diagnóstico preciso em ABS, airbag, módulos e sistemas eletrônicos.
           </p>
         </div>
-        <Button className="mt-4" href={siteConfig.whatsappHref} target="_blank" variant="secondary">
+        <Button
+          analyticsEvent="whatsapp_click"
+          className="mt-4"
+          href={siteConfig.whatsappHref}
+          target="_blank"
+          variant="secondary"
+        >
           Falar agora pelo WhatsApp
         </Button>
       </div>

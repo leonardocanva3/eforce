@@ -1,8 +1,10 @@
 import type { Metadata } from "next";
 import { Bebas_Neue, Roboto_Condensed } from "next/font/google";
+import { GoogleAnalytics } from "@next/third-parties/google";
 import { Footer, Header } from "@/components/layout";
 import { FloatingWhatsApp } from "@/components/ui";
 import { services } from "@/data/home";
+import { GA_MEASUREMENT_ID, IS_PRODUCTION } from "@/lib/analytics-config";
 import { siteConfig } from "@/data/site";
 import "./globals.css";
 
@@ -118,6 +120,7 @@ export default function RootLayout({
         <main>{children}</main>
         <Footer />
         <FloatingWhatsApp />
+        {IS_PRODUCTION ? <GoogleAnalytics gaId={GA_MEASUREMENT_ID} /> : null}
       </body>
     </html>
   );

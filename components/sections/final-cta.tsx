@@ -1,4 +1,5 @@
 import Image from "next/image";
+import { TrackedLink } from "@/components/ui";
 import { siteConfig } from "@/data/site";
 
 function WhatsAppIcon() {
@@ -40,7 +41,8 @@ export function FinalCTA() {
           </p>
         </div>
 
-        <a
+        <TrackedLink
+          analyticsEvent="whatsapp_click"
           aria-label="Chamar a EFORCE no WhatsApp"
           className="mx-auto flex h-[72px] w-full max-w-[380px] items-center justify-center gap-5 rounded-[14px] bg-white px-7 text-lg font-extrabold tracking-wide text-black shadow-[0_12px_32px_rgba(0,0,0,.24)] transition duration-300 hover:scale-[1.03] hover:bg-zinc-100 hover:brightness-105 lg:mx-0 lg:w-[380px] lg:text-xl"
           href={siteConfig.whatsappHref}
@@ -49,7 +51,7 @@ export function FinalCTA() {
         >
           Chamar no WhatsApp
           <WhatsAppIcon />
-        </a>
+        </TrackedLink>
       </div>
     </section>
   );

@@ -1,9 +1,19 @@
-import type { AnchorHTMLAttributes, ButtonHTMLAttributes, ReactNode } from "react";
+"use client";
+
+import type {
+  AnchorHTMLAttributes,
+  ButtonHTMLAttributes,
+  MouseEvent,
+  ReactNode,
+} from "react";
 import Link from "next/link";
+import type { AnalyticsEventName } from "@/lib/analytics";
+import { trackElementEvent } from "@/lib/analytics";
 
 type ButtonVariant = "primary" | "secondary" | "light";
 
 type ButtonProps = {
+  analyticsEvent?: AnalyticsEventName;
   children: ReactNode;
   className?: string;
   download?: AnchorHTMLAttributes<HTMLAnchorElement>["download"];
@@ -21,6 +31,7 @@ const variants: Record<ButtonVariant, string> = {
 };
 
 export function Button({
+  analyticsEvent,
   children,
   className = "",
   download,
@@ -28,6 +39,7 @@ export function Button({
   target,
   variant = "primary",
   type = "button",
+  onClick,
   ...props
 }: ButtonProps) {
   const classes = [
@@ -38,24 +50,45 @@ export function Button({
     .filter(Boolean)
     .join(" ");
 
+  const handleClick = (event: MouseEvent<HTMLAnchorElement | HTMLButtonElement>) => {
+    if (analyticsEvent) {
+      trackElementEvent(analyticsEvent, event.currentTarget, href);
+    }
+
+    onClick?.(event as MouseEvent<HTMLButtonElement>);
+  };
+
   if (href) {
     if (href.startsWith("/")) {
       return (
-        <Link className={classes} download={download} href={href} target={target}>
+        <Link
+          className={classes}
+          download={download}
+          href={href}
+          onClick={handleClick}
+          target={target}
+        >
           {children}
         </Link>
       );
     }
 
     return (
-      <a className={classes} download={download} href={href} rel={target ? "noreferrer" : undefined} target={target}>
+      <a
+        className={classes}
+        download={download}
+        href={href}
+        onClick={handleClick}
+        rel={target ? "noreferrer" : undefined}
+        target={target}
+      >
         {children}
       </a>
     );
   }
 
   return (
-    <button className={classes} type={type} {...props}>
+    <button className={classes} onClick={handleClick} type={type} {...props}>
       {children}
     </button>
   );
