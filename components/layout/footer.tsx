@@ -84,6 +84,17 @@ export function Footer() {
       </div>
       <div className="border-t border-white/5 px-5 py-4 text-center text-[10px] text-muted">
         © 2026 EFORCE Eletrônica Automotiva. Todos os direitos reservados.
+        <p className="mt-1 text-[9px] text-white/30">
+          Site e SEO Google feito por:{" "}
+          <a
+            className="transition hover:text-white/60"
+            href="https://www.oleonardomachado.com.br"
+            rel="noopener noreferrer"
+            target="_blank"
+          >
+            www.oleonardomachado.com.br
+          </a>
+        </p>
       </div>
     </footer>
   );
