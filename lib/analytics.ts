@@ -15,9 +15,13 @@ export type AnalyticsEventName =
   | "whatsapp_click";
 
 type AnalyticsParams = {
+  button_location?: string;
   button_text?: string;
+  event_category?: string;
+  event_label?: string;
   file_name?: string;
   page: string;
+  page_path?: string;
 };
 
 const googleAdsConversionLabels: Record<AnalyticsEventName, string> = {
@@ -45,6 +49,10 @@ function getElementText(element: HTMLElement) {
   )
     .replace(/\s+/g, " ")
     .trim();
+}
+
+function getButtonLocation(element: HTMLElement) {
+  return element.dataset.analyticsLocation || "";
 }
 
 function getFileName(href?: string) {
@@ -87,8 +95,25 @@ export function trackEvent(
     return;
   }
 
-  sendGAEvent("event", eventName, params);
-  trackGoogleAdsConversion(eventName, params);
+  try {
+    sendGAEvent("event", eventName, params);
+    trackGoogleAdsConversion(eventName, params);
+  } catch {
+    // Analytics must never block the user's click or navigation.
+  }
+}
+
+export function trackWhatsAppClick(element: HTMLElement) {
+  const page = getCurrentPage();
+
+  trackEvent("whatsapp_click", {
+    button_location: getButtonLocation(element),
+    button_text: getElementText(element),
+    event_category: "contact",
+    event_label: "E-Force WhatsApp",
+    page,
+    page_path: typeof window === "undefined" ? "" : window.location.pathname,
+  });
 }
 
 export function trackElementEvent(
@@ -99,10 +124,7 @@ export function trackElementEvent(
   const page = getCurrentPage();
 
   if (eventName === "whatsapp_click") {
-    trackEvent(eventName, {
-      button_text: getElementText(element),
-      page,
-    });
+    trackWhatsAppClick(element);
     return;
   }
 

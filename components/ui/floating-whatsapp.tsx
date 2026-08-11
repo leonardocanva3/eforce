@@ -5,6 +5,7 @@ export function FloatingWhatsApp() {
   return (
     <TrackedLink
       analyticsEvent="whatsapp_click"
+      analyticsLocation="floating"
       aria-label="Falar com a EFORCE pelo WhatsApp"
       className="fixed right-5 bottom-5 z-[100] grid size-[60px] place-items-center rounded-full border border-white/20 bg-[#25d366] text-white shadow-[0_10px_30px_rgba(0,0,0,.45),0_5px_16px_rgba(37,211,102,.35)] transition duration-300 hover:scale-110 hover:bg-[#20bd5a] focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#25d366] sm:right-7 sm:bottom-7"
       href={siteConfig.whatsappHref}

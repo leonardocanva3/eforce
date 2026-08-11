@@ -14,6 +14,7 @@ type ButtonVariant = "primary" | "secondary" | "light";
 
 type ButtonProps = {
   analyticsEvent?: AnalyticsEventName;
+  analyticsLocation?: string;
   children: ReactNode;
   className?: string;
   download?: AnchorHTMLAttributes<HTMLAnchorElement>["download"];
@@ -32,6 +33,7 @@ const variants: Record<ButtonVariant, string> = {
 
 export function Button({
   analyticsEvent,
+  analyticsLocation,
   children,
   className = "",
   download,
@@ -52,7 +54,11 @@ export function Button({
 
   const handleClick = (event: MouseEvent<HTMLAnchorElement | HTMLButtonElement>) => {
     if (analyticsEvent) {
-      trackElementEvent(analyticsEvent, event.currentTarget, href);
+      try {
+        trackElementEvent(analyticsEvent, event.currentTarget, href);
+      } catch {
+        // Tracking failures must never prevent the destination from opening.
+      }
     }
 
     onClick?.(event as MouseEvent<HTMLButtonElement>);
@@ -63,6 +69,7 @@ export function Button({
       return (
         <Link
           className={classes}
+          data-analytics-location={analyticsLocation}
           download={download}
           href={href}
           onClick={handleClick}
@@ -76,6 +83,7 @@ export function Button({
     return (
       <a
         className={classes}
+        data-analytics-location={analyticsLocation}
         download={download}
         href={href}
         onClick={handleClick}
@@ -88,7 +96,13 @@ export function Button({
   }
 
   return (
-    <button className={classes} onClick={handleClick} type={type} {...props}>
+    <button
+      className={classes}
+      data-analytics-location={analyticsLocation}
+      onClick={handleClick}
+      type={type}
+      {...props}
+    >
       {children}
     </button>
   );

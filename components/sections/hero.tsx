@@ -148,6 +148,7 @@ export function Hero() {
           >
             <Button
               analyticsEvent="whatsapp_click"
+              analyticsLocation="hero"
               href={siteConfig.whatsappHref}
               target="_blank"
             >

@@ -62,6 +62,7 @@ export function Services() {
       <div className="mt-7 text-center">
         <Button
           analyticsEvent="whatsapp_click"
+          analyticsLocation="services"
           href={servicesWhatsappHref}
           target="_blank"
           variant="secondary"

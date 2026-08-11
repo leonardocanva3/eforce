@@ -38,6 +38,7 @@ export function Problems() {
         </div>
         <Button
           analyticsEvent="whatsapp_click"
+          analyticsLocation="problems"
           className="mt-4"
           href={siteConfig.whatsappHref}
           target="_blank"
