@@ -68,10 +68,7 @@ function hasGoogleAdsConversion(eventName: AnalyticsEventName) {
   return Boolean(GOOGLE_ADS_ID && googleAdsConversionLabels[eventName]);
 }
 
-function trackGoogleAdsConversion(
-  eventName: AnalyticsEventName,
-  params: AnalyticsParams,
-) {
+function trackGoogleAdsConversion(eventName: AnalyticsEventName) {
   if (!hasGoogleAdsConversion(eventName)) {
     return;
   }
@@ -82,7 +79,6 @@ function trackGoogleAdsConversion(
   }
 
   sendGAEvent("event", "conversion", {
-    ...params,
     send_to: `${GOOGLE_ADS_ID}/${googleAdsConversionLabels[eventName]}`,
   });
 }
@@ -97,7 +93,7 @@ export function trackEvent(
 
   try {
     sendGAEvent("event", eventName, params);
-    trackGoogleAdsConversion(eventName, params);
+    trackGoogleAdsConversion(eventName);
   } catch {
     // Analytics must never block the user's click or navigation.
   }
